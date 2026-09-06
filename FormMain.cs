@@ -18,8 +18,7 @@ namespace QuanLyGioDay
             InitializeComponent();
         }
 
-        
-        // --- DÁN HÀM DÙNG CHUNG VÀO ĐÂY ---
+        // --- HÀM MỞ FORM CON DÙNG CHUNG ---
         private void OpenChildForm(Form childForm)
         {
             // Kiểm tra nếu Form con đã mở rồi thì activate nó
@@ -38,91 +37,81 @@ namespace QuanLyGioDay
             childForm.Show();
         }
 
+        // --- CÁC SỰ KIỆN CLICK (ĐÃ DỌN SẠCH RUỘT ĐỂ THÀNH VIÊN TỰ ĐIỀN) ---
+
+        // 1. Nhóm Danh Mục
         private void menuKhoa_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Quản lý Khoa" };
-            OpenChildForm(frm);
+            // Thành viên phụ trách Danh Mục điền Form vào đây
         }
 
         private void menuBoMon_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Quản lý Bộ môn" };
-            OpenChildForm(frm);
+
         }
 
         private void menuTrinhDo_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Quản lý Trình độ" };
-            OpenChildForm(frm);
+
         }
 
         private void menuChuyenNganh_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Quản lý Chuyên ngành" };
-            OpenChildForm(frm);
+
         }
 
         private void menuMonHoc_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Quản lý Môn học" };
-            OpenChildForm(frm);
+
         }
 
+        // 2. Nhóm Hồ Sơ & Giáo Viên
         private void menuGiaoVien_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Quản lý Giáo viên" };
-            OpenChildForm(frm);
+
         }
 
         private void menuLopHoc_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Quản lý Lớp học" };
-            OpenChildForm(frm);
+
         }
 
         private void menuGVMonDay_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Giáo viên - Môn dạy" };
-            OpenChildForm(frm);
+
         }
 
+        // 3. Nhóm Lịch Dạy
         private void menuPhanCongLichDay_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Phân công Lịch dạy" };
-            OpenChildForm(frm);
+
         }
 
+        // 4. Nhóm Tìm Kiếm
         private void menuTimKiemLichHoc_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Tìm kiếm Lịch học" };
-            OpenChildForm(frm);
+
         }
 
         private void menuTimKiemGiaoVien_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Tìm kiếm Giáo viên" };
-            OpenChildForm(frm);
+
         }
 
+        // 5. Nhóm Báo Cáo
         private void menuBaoCaoTienDay_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Thống kê Tiền dạy" };
-            OpenChildForm(frm);
+
         }
 
         private void menuBaoCaoTienThi_Click(object sender, EventArgs e)
         {
-            Form frm = new Form() { Text = "Thống kê Tiền thi" };
-            OpenChildForm(frm);
+
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }
-
-
