@@ -9,7 +9,7 @@ namespace QuanLyGioDay
     {
         private static string connectionString = ConfigurationManager.ConnectionStrings["QuanLyGioDayConn"].ConnectionString;
 
-        // 1. Hàm lấy dữ liệu nạp vào DataGridView / ComboBox (Chạy câu lệnh SELECT)
+        // 1. Hàm SELECT trả về DataTable (Hỗ trợ cả câu lệnh thường lẫn Parameter)
         public static DataTable GetData(string sql)
         {
             DataTable dt = new DataTable();
@@ -22,7 +22,45 @@ namespace QuanLyGioDay
             return dt;
         }
 
-        // 2. Hàm thực thi Thêm / Sửa / Xóa (Chạy câu lệnh INSERT, UPDATE, DELETE)
+        public static DataTable ExecuteQuery(string sql, SqlParameter[] parameters = null)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+        // 2. Hàm Thêm / Sửa / Xóa (Trả về số dòng bị thay đổi)
+        public static int ExecuteNonQuery(string sql, SqlParameter[] parameters = null)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    if (parameters != null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // 3. Hàm ExecuteSql cũ (Giữ lại để nếu có chỗ nào gọi không bị lỗi)
         public static bool ExecuteSql(string sql)
         {
             try
