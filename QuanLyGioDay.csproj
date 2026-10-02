@@ -48,12 +48,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
-    <Compile Include="DatabaseHelper.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_DanhMuc\FormBoMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_DanhMuc\FormBoMon.Designer.cs">
+      <DependentUpon>FormBoMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_DanhMuc\FormKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_DanhMuc\FormKhoa.Designer.cs">
+      <DependentUpon>FormKhoa.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_LichDay\FormLichDay.cs">
       <SubType>Form</SubType>
@@ -65,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_DanhMuc\FormKhoa.resx">
+      <DependentUpon>FormKhoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,7 +104,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms_DanhMuc\" />
     <Folder Include="Forms_GiaoVien\" />
     <Folder Include="Forms_TimKiem\" />
     <Folder Include="Reports\" />

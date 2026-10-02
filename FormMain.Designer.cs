@@ -112,7 +112,7 @@
             // 
             this.menuKhoa.Image = global::QuanLyGioDay.Properties.Resources.books__1_1;
             this.menuKhoa.Name = "menuKhoa";
-            this.menuKhoa.Size = new System.Drawing.Size(224, 26);
+            this.menuKhoa.Size = new System.Drawing.Size(185, 26);
             this.menuKhoa.Text = "Khoa";
             this.menuKhoa.Click += new System.EventHandler(this.menuKhoa_Click);
             // 
@@ -120,7 +120,7 @@
             // 
             this.menuBoMon.Image = global::QuanLyGioDay.Properties.Resources.folder;
             this.menuBoMon.Name = "menuBoMon";
-            this.menuBoMon.Size = new System.Drawing.Size(224, 26);
+            this.menuBoMon.Size = new System.Drawing.Size(185, 26);
             this.menuBoMon.Text = "Bộ môn";
             this.menuBoMon.Click += new System.EventHandler(this.menuBoMon_Click);
             // 
@@ -128,7 +128,7 @@
             // 
             this.menuTrinhDo.Image = global::QuanLyGioDay.Properties.Resources.baccalaureate1;
             this.menuTrinhDo.Name = "menuTrinhDo";
-            this.menuTrinhDo.Size = new System.Drawing.Size(224, 26);
+            this.menuTrinhDo.Size = new System.Drawing.Size(185, 26);
             this.menuTrinhDo.Text = "Trình độ";
             this.menuTrinhDo.Click += new System.EventHandler(this.menuTrinhDo_Click);
             // 
@@ -136,7 +136,7 @@
             // 
             this.menuChuyenNganh.Image = global::QuanLyGioDay.Properties.Resources.education2;
             this.menuChuyenNganh.Name = "menuChuyenNganh";
-            this.menuChuyenNganh.Size = new System.Drawing.Size(224, 26);
+            this.menuChuyenNganh.Size = new System.Drawing.Size(185, 26);
             this.menuChuyenNganh.Text = "Chuyên ngành";
             this.menuChuyenNganh.Click += new System.EventHandler(this.menuChuyenNganh_Click);
             // 
@@ -144,7 +144,7 @@
             // 
             this.menuMonHoc.Image = global::QuanLyGioDay.Properties.Resources.books2;
             this.menuMonHoc.Name = "menuMonHoc";
-            this.menuMonHoc.Size = new System.Drawing.Size(224, 26);
+            this.menuMonHoc.Size = new System.Drawing.Size(185, 26);
             this.menuMonHoc.Text = "Môn học";
             this.menuMonHoc.Click += new System.EventHandler(this.menuMonHoc_Click);
             // 
@@ -376,7 +376,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ GIỜ DẠY GIÁO VIÊN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormMain_Load);
             this.Click += new System.EventHandler(this.menuTimKiemLichHoc_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

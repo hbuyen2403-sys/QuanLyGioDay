@@ -43,6 +43,8 @@ namespace QuanLyGioDay
         private void menuKhoa_Click(object sender, EventArgs e)
         {
             // Thành viên phụ trách Danh Mục điền Form vào đây
+            Forms_DanhMuc.FormKhoa frm = new Forms_DanhMuc.FormKhoa();
+            OpenChildForm(frm);
         }
 
         private void menuBoMon_Click(object sender, EventArgs e)
