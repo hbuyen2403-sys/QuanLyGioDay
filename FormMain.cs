@@ -35,7 +35,10 @@ namespace QuanLyGioDay
             childForm.MdiParent = this;
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
+            childForm.WindowState = FormWindowState.Maximized;
+            
         }
+        
 
         // --- CÁC SỰ KIỆN CLICK (ĐÃ DỌN SẠCH RUỘT ĐỂ THÀNH VIÊN TỰ ĐIỀN) ---
 
@@ -45,6 +48,7 @@ namespace QuanLyGioDay
             // Thành viên phụ trách Danh Mục điền Form vào đây
             Forms_DanhMuc.FormKhoa frm = new Forms_DanhMuc.FormKhoa();
             OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuBoMon_Click(object sender, EventArgs e)
@@ -111,7 +115,7 @@ namespace QuanLyGioDay
 
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
 
         }
