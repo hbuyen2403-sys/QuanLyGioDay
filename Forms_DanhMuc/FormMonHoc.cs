@@ -145,61 +145,112 @@ namespace QuanLyGioDay.Forms_DanhMuc
             txtTenMH.Focus();
         }
 
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaMH.Text) || string.IsNullOrWhiteSpace(txtTenMH.Text))
+            if (string.IsNullOrWhiteSpace(txtMaMH.Text) ||
+                string.IsNullOrWhiteSpace(txtTenMH.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Mã môn học và Tên môn học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Vui lòng nhập đầy đủ Mã môn học và Tên môn học!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
-            // Kiếm tra định dạng kiểu số cho Số tiết
             int soTiet = 0;
-            if (!string.IsNullOrWhiteSpace(txtSoTiet.Text) && !int.TryParse(txtSoTiet.Text.Trim(), out soTiet))
+            if (!string.IsNullOrWhiteSpace(txtSoTiet.Text) &&
+                !int.TryParse(txtSoTiet.Text.Trim(), out soTiet))
             {
-                MessageBox.Show("Số tiết phải là một số nguyên hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Số tiết phải là một số nguyên hợp lệ!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
                 txtSoTiet.Focus();
                 return;
             }
 
-            object maKhoaValue = cboKhoa.SelectedValue != null ? cboKhoa.SelectedValue.ToString() : (object)DBNull.Value;
+            object maKhoaValue = cboKhoa.SelectedValue != null
+                ? (object)cboKhoa.SelectedValue.ToString()
+                : DBNull.Value;
 
             try
             {
-                if (isAdding) // THỰC HIỆN THÊM MỚI
+                int result = 0;
+
+                if (isAdding) // THÊM MỚI
                 {
-                    string sql = "INSERT INTO MonHoc(MaMon, TenMon, SoTiet, MaKhoa) VALUES(@MaMon, @TenMon, @SoTiet, @MaKhoa)";
+                    string sql = @"INSERT INTO MonHoc
+                (MaMon, TenMon, SoTiet, MaKhoa)
+                VALUES (@MaMon, @TenMon, @SoTiet, @MaKhoa)";
+
                     SqlParameter[] parameters = new SqlParameter[]
                     {
-                        new SqlParameter("@MaMon", txtMaMH.Text.Trim()),
-                        new SqlParameter("@TenMon", txtTenMH.Text.Trim()),
-                        new SqlParameter("@SoTiet", string.IsNullOrWhiteSpace(txtSoTiet.Text) ? (object)DBNull.Value : soTiet),
-                        new SqlParameter("@MaKhoa", maKhoaValue)
+                new SqlParameter("@MaMon", txtMaMH.Text.Trim()),
+                new SqlParameter("@TenMon", txtTenMH.Text.Trim()),
+                new SqlParameter("@SoTiet",
+                    string.IsNullOrWhiteSpace(txtSoTiet.Text)
+                    ? (object)DBNull.Value : soTiet),
+                new SqlParameter("@MaKhoa", maKhoaValue)
                     };
 
-                    int result = Database.ExecuteNonQuery(sql, parameters);
+                    result = Database.ExecuteNonQuery(sql, parameters);
+
                     if (result > 0)
                     {
-                        MessageBox.Show("Thêm mới Môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(
+                            "Thêm mới Môn học thành công!",
+                            "Thông báo",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                     }
                 }
-                else // THỰC HIỆN CẬP NHẬT
+                else // CẬP NHẬT
                 {
-                    string sql = "UPDATE MonHoc SET TenMon = @TenMon, SoTiet = @SoTiet, MaKhoa = @MaKhoa WHERE MaMon = @MaMon";
+                    string sql = @"UPDATE MonHoc
+                SET TenMon = @TenMon,
+                    SoTiet = @SoTiet,
+                    MaKhoa = @MaKhoa
+                WHERE MaMon = @MaMon";
+
                     SqlParameter[] parameters = new SqlParameter[]
                     {
-                        new SqlParameter("@MaMon", txtMaMH.Text.Trim()),
-                        new SqlParameter("@TenMon", txtTenMH.Text.Trim()),
-                        new SqlParameter("@SoTiet", string.IsNullOrWhiteSpace(txtSoTiet.Text) ? (object)DBNull.Value : soTiet),
-                        new SqlParameter("@MaKhoa", maKhoaValue)
+                new SqlParameter("@MaMon", txtMaMH.Text.Trim()),
+                new SqlParameter("@TenMon", txtTenMH.Text.Trim()),
+                new SqlParameter("@SoTiet",
+                    string.IsNullOrWhiteSpace(txtSoTiet.Text)
+                    ? (object)DBNull.Value : soTiet),
+                new SqlParameter("@MaKhoa", maKhoaValue)
                     };
 
-                    int result = Database.ExecuteNonQuery(sql, parameters);
+                    result = Database.ExecuteNonQuery(sql, parameters);
+
                     if (result > 0)
                     {
-                        MessageBox.Show("Cập nhật Môn học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(
+                            "Cập nhật Môn học thành công!",
+                            "Thông báo",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
                     }
                 }
+
+                // ===== CODE MỚI: CẬP NHẬT THỐNG KÊ =====
+                if (result > 0)
+                {
+                    FormMain main =
+                        Application.OpenForms.OfType<FormMain>()
+                        .FirstOrDefault();
+
+                    if (main != null)
+                    {
+                        main.RefreshThongKe();
+                    }
+                }
+                // =====================================
 
                 LoadDanhSachMonHoc();
                 SetState(false);
@@ -207,9 +258,14 @@ namespace QuanLyGioDay.Forms_DanhMuc
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi thực thi dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Lỗi thực thi dữ liệu: " + ex.Message,
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
