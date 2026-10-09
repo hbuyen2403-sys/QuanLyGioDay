@@ -18,11 +18,17 @@ namespace QuanLyGioDay.Forms_DanhMuc
         {
             InitializeComponent();
         }
+
+        private void FormKhoa_Load(object sender, EventArgs e)
+        {
+            LoadDanhSachKhoa();
+        }
+
         private void LoadDanhSachKhoa()
         {
             try
             {
-                string sql = "SELECT MaKhoa AS [Mã Khoa], TenKhoa AS [Tên Khoa] FROM Khoa";
+                string sql = "SELECT MaKhoa AS [Mã Khoa], TenKhoa AS [Tên Khoa], DiaChi AS [Địa chỉ], DienThoai AS [Điện thoại] FROM Khoa";
                 DataTable dt = Database.ExecuteQuery(sql);
                 dgvKhoa.DataSource = dt;
             }
@@ -30,10 +36,6 @@ namespace QuanLyGioDay.Forms_DanhMuc
             {
                 MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void FormKhoa_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void dgvKhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,6 +45,8 @@ namespace QuanLyGioDay.Forms_DanhMuc
                 DataGridViewRow row = dgvKhoa.Rows[e.RowIndex];
                 txtMaKhoa.Text = row.Cells["Mã Khoa"].Value?.ToString();
                 txtTenKhoa.Text = row.Cells["Tên Khoa"].Value?.ToString();
+                txtDiaChi.Text = row.Cells["Địa chỉ"].Value?.ToString();
+                txtDienThoai.Text = row.Cells["Điện thoại"].Value?.ToString();
 
                 // Khóa ô Mã khoa khi chọn sửa (vì Mã khoa là Khóa chính)
                 txtMaKhoa.Enabled = false;
@@ -51,7 +55,7 @@ namespace QuanLyGioDay.Forms_DanhMuc
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(txtMaKhoa.Text) || string.IsNullOrWhiteSpace(txtTenKhoa.Text))
+            if (string.IsNullOrWhiteSpace(txtMaKhoa.Text) || string.IsNullOrWhiteSpace(txtTenKhoa.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ Mã khoa và Tên khoa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -59,11 +63,13 @@ namespace QuanLyGioDay.Forms_DanhMuc
 
             try
             {
-                string sql = "INSERT INTO Khoa(MaKhoa, TenKhoa) VALUES(@MaKhoa, @TenKhoa)";
+                string sql = "INSERT INTO Khoa(MaKhoa, TenKhoa, DiaChi, DienThoai) VALUES(@MaKhoa, @TenKhoa, @DiaChi, @DienThoai)";
                 SqlParameter[] parameters = new SqlParameter[]
                 {
                     new SqlParameter("@MaKhoa", txtMaKhoa.Text.Trim()),
-                    new SqlParameter("@TenKhoa", txtTenKhoa.Text.Trim())
+                    new SqlParameter("@TenKhoa", txtTenKhoa.Text.Trim()),
+                    new SqlParameter("@DiaChi", txtDiaChi.Text.Trim()),
+                    new SqlParameter("@DienThoai", txtDienThoai.Text.Trim())
                 };
 
                 int result = Database.ExecuteNonQuery(sql, parameters);
@@ -79,10 +85,13 @@ namespace QuanLyGioDay.Forms_DanhMuc
                 MessageBox.Show("Lỗi thêm dữ liệu (có thể do trùng Mã khoa): " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void ResetForm()
         {
             txtMaKhoa.Text = "";
             txtTenKhoa.Text = "";
+            txtDiaChi.Text = "";
+            txtDienThoai.Text = "";
             txtMaKhoa.Enabled = true; // Mở lại ô Mã khoa cho phép nhập thêm
             txtMaKhoa.Focus();
         }
@@ -97,11 +106,13 @@ namespace QuanLyGioDay.Forms_DanhMuc
 
             try
             {
-                string sql = "UPDATE Khoa SET TenKhoa = @TenKhoa WHERE MaKhoa = @MaKhoa";
+                string sql = "UPDATE Khoa SET TenKhoa = @TenKhoa, DiaChi = @DiaChi, DienThoai = @DienThoai WHERE MaKhoa = @MaKhoa";
                 SqlParameter[] parameters = new SqlParameter[]
                 {
                     new SqlParameter("@MaKhoa", txtMaKhoa.Text.Trim()),
-                    new SqlParameter("@TenKhoa", txtTenKhoa.Text.Trim())
+                    new SqlParameter("@TenKhoa", txtTenKhoa.Text.Trim()),
+                    new SqlParameter("@DiaChi", txtDiaChi.Text.Trim()),
+                    new SqlParameter("@DienThoai", txtDienThoai.Text.Trim())
                 };
 
                 int result = Database.ExecuteNonQuery(sql, parameters);
@@ -154,6 +165,11 @@ namespace QuanLyGioDay.Forms_DanhMuc
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             ResetForm();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

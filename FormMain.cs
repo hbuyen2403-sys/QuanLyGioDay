@@ -53,28 +53,36 @@ namespace QuanLyGioDay
 
         private void menuBoMon_Click(object sender, EventArgs e)
         {
-
+            Forms_DanhMuc.FormBoMon frm = new Forms_DanhMuc.FormBoMon();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuTrinhDo_Click(object sender, EventArgs e)
         {
-
+            Forms_DanhMuc.FormTrinhDo frm = new Forms_DanhMuc.FormTrinhDo();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuChuyenNganh_Click(object sender, EventArgs e)
         {
-
+            Forms_DanhMuc.FormChuyenNganh frm = new Forms_DanhMuc.FormChuyenNganh();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuMonHoc_Click(object sender, EventArgs e)
         {
-
+            Forms_DanhMuc.FormMonHoc frm = new Forms_DanhMuc.FormMonHoc();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         // 2. Nhóm Hồ Sơ & Giáo Viên
         private void menuGiaoVien_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void menuLopHoc_Click(object sender, EventArgs e)
@@ -115,9 +123,6 @@ namespace QuanLyGioDay
 
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

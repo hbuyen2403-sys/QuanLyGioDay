@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Khoa");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Lớp học");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Quản lí Hồ sơ");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Quản lí Lịch dạy");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Lịch học");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Báo cáo & In ấn");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("DANH MỤC CHỨC NĂNG", new System.Windows.Forms.TreeNode[] {
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Khoa");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Lớp học");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Quản lí Hồ sơ");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Quản lí Lịch dạy");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Lịch học");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Báo cáo & In ấn");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("DANH MỤC CHỨC NĂNG", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.danhMụcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,21 +75,28 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -103,13 +110,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -153,7 +153,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1129, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1471, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -338,7 +338,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 501);
+            this.panel1.Size = new System.Drawing.Size(267, 617);
             this.panel1.TabIndex = 3;
             // 
             // treeView2
@@ -349,22 +349,22 @@
             this.treeView2.Location = new System.Drawing.Point(0, 0);
             this.treeView2.Margin = new System.Windows.Forms.Padding(4);
             this.treeView2.Name = "treeView2";
-            treeNode15.Name = "Node2";
-            treeNode15.Text = "Khoa";
-            treeNode16.Name = "Node3";
-            treeNode16.Text = "Lớp học";
-            treeNode17.Name = "Node4";
-            treeNode17.Text = "Quản lí Hồ sơ";
-            treeNode18.Name = "Node5";
-            treeNode18.Text = "Quản lí Lịch dạy";
-            treeNode19.Name = "Node6";
-            treeNode19.Text = "Lịch học";
-            treeNode20.Name = "Node7";
-            treeNode20.Text = "Báo cáo & In ấn";
-            treeNode21.Name = "Node0";
-            treeNode21.Text = "DANH MỤC CHỨC NĂNG";
+            treeNode8.Name = "Node2";
+            treeNode8.Text = "Khoa";
+            treeNode9.Name = "Node3";
+            treeNode9.Text = "Lớp học";
+            treeNode10.Name = "Node4";
+            treeNode10.Text = "Quản lí Hồ sơ";
+            treeNode11.Name = "Node5";
+            treeNode11.Text = "Quản lí Lịch dạy";
+            treeNode12.Name = "Node6";
+            treeNode12.Text = "Lịch học";
+            treeNode13.Name = "Node7";
+            treeNode13.Text = "Báo cáo & In ấn";
+            treeNode14.Name = "Node0";
+            treeNode14.Text = "DANH MỤC CHỨC NĂNG";
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21});
+            treeNode14});
             this.treeView2.SelectedImageIndex = 0;
             this.treeView2.Size = new System.Drawing.Size(265, 497);
             this.treeView2.TabIndex = 1;
@@ -381,7 +381,7 @@
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(267, 501);
+            this.treeView1.Size = new System.Drawing.Size(267, 617);
             this.treeView1.TabIndex = 0;
             // 
             // statusStrip1
@@ -392,10 +392,10 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 529);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 645);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1129, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1471, 26);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -438,7 +438,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(267, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(862, 501);
+            this.panel2.Size = new System.Drawing.Size(1204, 617);
             this.panel2.TabIndex = 7;
             // 
             // panel13
@@ -450,6 +450,17 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(160, 100);
             this.panel13.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(12, 65);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(138, 23);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Hệ Thống";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox12
             // 
@@ -466,15 +477,26 @@
             this.panel12.BackColor = System.Drawing.Color.Green;
             this.panel12.Controls.Add(this.label9);
             this.panel12.Controls.Add(this.pictureBox9);
-            this.panel12.Location = new System.Drawing.Point(541, 222);
+            this.panel12.Location = new System.Drawing.Point(838, 277);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(160, 100);
+            this.panel12.Size = new System.Drawing.Size(247, 140);
             this.panel12.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(12, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(138, 23);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Lịch Giảng Dạy";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(37, 18);
+            this.pictureBox9.Location = new System.Drawing.Point(95, 18);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(89, 42);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -486,17 +508,28 @@
             this.panel11.BackColor = System.Drawing.Color.Green;
             this.panel11.Controls.Add(this.label6);
             this.panel11.Controls.Add(this.pictureBox6);
-            this.panel11.Location = new System.Drawing.Point(541, 86);
+            this.panel11.Location = new System.Drawing.Point(838, 84);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(160, 100);
+            this.panel11.Size = new System.Drawing.Size(247, 149);
             this.panel11.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(84, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Khoa";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(31, 14);
+            this.pictureBox6.Location = new System.Drawing.Point(71, 29);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(105, 56);
+            this.pictureBox6.Size = new System.Drawing.Size(123, 80);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
@@ -510,6 +543,17 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(157, 100);
             this.panel10.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(12, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 23);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Thống Kê";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox11
             // 
@@ -530,6 +574,17 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(160, 102);
             this.panel9.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(32, 63);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 23);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Môn Học";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox8
             // 
@@ -571,7 +626,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // panel7
             // 
@@ -582,6 +636,17 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(157, 100);
             this.panel7.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(9, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(138, 23);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Phòng Học";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox10
             // 
@@ -603,6 +668,17 @@
             this.panel6.Size = new System.Drawing.Size(157, 102);
             this.panel6.TabIndex = 3;
             // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(28, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Giáo viên";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
@@ -621,7 +697,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(862, 61);
+            this.panel3.Size = new System.Drawing.Size(1204, 61);
             this.panel3.TabIndex = 2;
             // 
             // label2
@@ -677,7 +753,7 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Location = new System.Drawing.Point(-1, -1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(157, 102);
+            this.panel5.Size = new System.Drawing.Size(190, 132);
             this.panel5.TabIndex = 4;
             // 
             // pictureBox4
@@ -743,88 +819,11 @@
             this.label1.Text = "Dashboard";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(30, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Khoa";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(28, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 23);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Giáo viên";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(32, 63);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 23);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Môn Học";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(12, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(138, 23);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Lịch Giảng Dạy";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(9, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 23);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Phòng Học";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(12, 65);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(138, 23);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Thống Kê";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(12, 65);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(138, 23);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Hệ Thống";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 555);
+            this.ClientSize = new System.Drawing.Size(1471, 671);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
