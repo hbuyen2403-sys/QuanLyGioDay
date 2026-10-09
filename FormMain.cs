@@ -74,7 +74,9 @@ namespace QuanLyGioDay
         // 2. Nhóm Hồ Sơ & Giáo Viên
         private void menuGiaoVien_Click(object sender, EventArgs e)
         {
-
+            Forms_GiaoVien.FormGiaoVien frm = new Forms_GiaoVien.FormGiaoVien();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuLopHoc_Click(object sender, EventArgs e)

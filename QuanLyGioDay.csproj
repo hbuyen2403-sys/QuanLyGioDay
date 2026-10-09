@@ -66,6 +66,24 @@
     <Compile Include="Forms_DanhMuc\FormKhoa.Designer.cs">
       <DependentUpon>FormKhoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVien.Designer.cs">
+      <DependentUpon>FormGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.Designer.cs">
+      <DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormLopHoc.Designer.cs">
+      <DependentUpon>FormLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_LichDay\FormLichDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +97,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_DanhMuc\FormKhoa.resx">
       <DependentUpon>FormKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_GiaoVien\FormGiaoVien.resx">
+      <DependentUpon>FormGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_GiaoVien\FormGiaoVienMonDay.resx">
+      <DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,8 +128,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms_GiaoVien\" />
-    <Folder Include="Forms_GiaoVien\" />
     <Folder Include="Forms_TimKiem\" />
     <Folder Include="Reports\" />
   </ItemGroup>
