@@ -22,9 +22,29 @@ namespace QuanLyGioDay
             HienThiThongTinTaiKhoan();
             HienThiThongBao();
             LoadThongKe();
+            dtpNgayXem.Value = DateTime.Today;
+
+            dtpNgayXem.ValueChanged += dtpNgayXem_ValueChanged;
+            btnHomNay.Click += btnHomNay_Click;
+
+            TaiLichTrongNgay();
         }
 
         // --- HÀM MỞ FORM CON DÙNG CHUNG ---
+        private void menuTrangChu_Click(object sender, EventArgs e)
+{
+    // Đóng các Form con đang mở
+    foreach (Form frm in this.MdiChildren)
+    {
+        frm.Close();
+    }
+
+    // Hiện lại Dashboard
+    panel2.BringToFront();
+
+    // Tải lại lịch của ngày đang chọn
+    TaiLichTrongNgay();
+}
         private void OpenChildForm(Form childForm)
         {
             // Kiểm tra nếu Form con đã mở rồi thì activate nó
@@ -104,18 +124,22 @@ namespace QuanLyGioDay
         // 3. Nhóm Lịch Dạy
         private void menuPhanCongLichDay_Click(object sender, EventArgs e)
         {
+            Forms_LichDay.FormLichDay frm =
+      new Forms_LichDay.FormLichDay();
 
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         // 4. Nhóm Tìm Kiếm
         private void menuTimKiemLichHoc_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void menuTimKiemGiaoVien_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         // 5. Nhóm Báo Cáo
@@ -199,5 +223,121 @@ namespace QuanLyGioDay
             LoadThongKe();
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // ===== DASHBOARD: LỊCH GIẢNG DẠY TRONG NGÀY =====
+
+        private string LayThuTrongTuan(DateTime ngay)
+        {
+            switch (ngay.DayOfWeek)
+            {
+                case DayOfWeek.Monday: return "Thứ 2";
+                case DayOfWeek.Tuesday: return "Thứ 3";
+                case DayOfWeek.Wednesday: return "Thứ 4";
+                case DayOfWeek.Thursday: return "Thứ 5";
+                case DayOfWeek.Friday: return "Thứ 6";
+                case DayOfWeek.Saturday: return "Thứ 7";
+                default: return "Chủ nhật";
+            }
+        }
+
+        private void TaiLichTrongNgay()
+        {
+            try
+            {
+                DateTime ngay = dtpNgayXem.Value.Date;
+                string thu = LayThuTrongTuan(ngay);
+
+                string sql = @"
+                    SELECT
+                        Buoi.CaDay AS [Ca học],
+                        LH.TenLop AS [Lớp học],
+                        MH.TenMon AS [Môn học],
+                        GV.TenGV AS [Giảng viên],
+                        LH.SiSo AS [Sĩ số],
+                        LD.GhiChu AS [Ghi chú]
+                    FROM LichDay LD
+                    INNER JOIN LopHoc LH ON LD.MaLop = LH.MaLop
+                    INNER JOIN MonHoc MH ON LD.MaMon = MH.MaMon
+                    INNER JOIN GiaoVien GV ON LD.MaGV = GV.MaGV
+                    CROSS APPLY (
+                        VALUES
+                            (LD.ThuDay1, LD.CaDay1),
+                            (LD.ThuDay2, LD.CaDay2)
+                    ) AS Buoi(ThuDay, CaDay)
+                    WHERE
+                        @Ngay BETWEEN LD.ThoiGianBD AND LD.ThoiGianKT
+                        AND LTRIM(RTRIM(Buoi.ThuDay)) = @Thu
+                        AND Buoi.CaDay IS NOT NULL
+                    ORDER BY Buoi.CaDay, LH.TenLop;
+                ";
+
+                SqlParameter[] parameters =
+                {
+                    new SqlParameter("@Ngay", SqlDbType.Date)
+                    {
+                        Value = ngay
+                    },
+                    new SqlParameter("@Thu", SqlDbType.NVarChar, 20)
+                    {
+                        Value = thu
+                    }
+                };
+
+                DataTable dt = Database.ExecuteQuery(sql, parameters);
+
+                dgvLichTrongNgay.AutoGenerateColumns = true;
+                dgvLichTrongNgay.SelectionMode =
+    DataGridViewSelectionMode.FullRowSelect;
+                dgvLichTrongNgay.DataSource = dt;
+
+                dgvLichTrongNgay.ReadOnly = true;
+                dgvLichTrongNgay.AllowUserToAddRows = false;
+                dgvLichTrongNgay.AllowUserToDeleteRows = false;
+                dgvLichTrongNgay.RowHeadersVisible = false;
+                dgvLichTrongNgay.AutoSizeColumnsMode =
+                    DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Lỗi khi tải lịch dạy: " + ex.Message,
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void dtpNgayXem_ValueChanged(object sender, EventArgs e)
+        {
+            TaiLichTrongNgay();
+        }
+
+        private void btnHomNay_Click(object sender, EventArgs e)
+        {
+            if (dtpNgayXem.Value.Date == DateTime.Today)
+                TaiLichTrongNgay();
+            else
+                dtpNgayXem.Value = DateTime.Today;
+        }
+
+        private void toolStripTrangChủ_Click(object sender, EventArgs e)
+        {
+            foreach (Form frm in this.MdiChildren)
+            {
+                frm.Close();
+            }
+
+            panel2.BringToFront();
+            TaiLichTrongNgay();
+        }
     }
 }
