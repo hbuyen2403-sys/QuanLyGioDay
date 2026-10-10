@@ -90,6 +90,18 @@
     <Compile Include="Forms_LichDay\FormLichDay.Designer.cs">
       <DependentUpon>FormLichDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_TimKiem\FormTimKiemGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_TimKiem\FormTimKiemGiaoVien.Designer.cs">
+      <DependentUpon>FormTimKiemGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_TimKiem\FormTimKiemLichHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_TimKiem\FormTimKiemLichHoc.Designer.cs">
+      <DependentUpon>FormTimKiemLichHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
@@ -112,6 +124,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_LichDay\FormLichDay.resx">
       <DependentUpon>FormLichDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_TimKiem\FormTimKiemGiaoVien.resx">
+      <DependentUpon>FormTimKiemGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_TimKiem\FormTimKiemLichHoc.resx">
+      <DependentUpon>FormTimKiemLichHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,7 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms_GiaoVien\" />
-    <Folder Include="Forms_TimKiem\" />
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>

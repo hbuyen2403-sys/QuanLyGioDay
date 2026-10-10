@@ -134,12 +134,20 @@ namespace QuanLyGioDay
         // 4. Nhóm Tìm Kiếm
         private void menuTimKiemLichHoc_Click(object sender, EventArgs e)
         {
-           
+            Forms_TimKiem.FormTimKiemLichHoc frm =
+        new Forms_TimKiem.FormTimKiemLichHoc();
+
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuTimKiemGiaoVien_Click(object sender, EventArgs e)
         {
-            
+            Forms_TimKiem.FormTimKiemGiaoVien frm =
+       new Forms_TimKiem.FormTimKiemGiaoVien();
+
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         // 5. Nhóm Báo Cáo
@@ -338,6 +346,20 @@ namespace QuanLyGioDay
 
             panel2.BringToFront();
             TaiLichTrongNgay();
+        }
+
+        private void menuTimKiemLichHoc_Click_1(object sender, EventArgs e)
+        {
+            Forms_TimKiem.FormTimKiemLichHoc frm =
+       new Forms_TimKiem.FormTimKiemLichHoc();
+
+            OpenChildForm(frm);
+            panel2.SendToBack();
+        }
+
+        private void dgvLichTrongNgay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
