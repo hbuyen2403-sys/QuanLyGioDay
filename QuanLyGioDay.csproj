@@ -60,6 +60,12 @@
     <Compile Include="Forms_DanhMuc\FormBoMon.Designer.cs">
       <DependentUpon>FormBoMon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_DanhMuc\FormChuyenNganh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_DanhMuc\FormChuyenNganh.Designer.cs">
+      <DependentUpon>FormChuyenNganh.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_DanhMuc\FormKhoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,16 +90,28 @@
     <Compile Include="Forms_GiaoVien\FormLopHoc.Designer.cs">
       <DependentUpon>FormLopHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms_LichDay\FormLichDay.cs">
+    <Compile Include="Forms_DanhMuc\FormMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms_LichDay\FormLichDay.Designer.cs">
-      <DependentUpon>FormLichDay.cs</DependentUpon>
+    <Compile Include="Forms_DanhMuc\FormMonHoc.Designer.cs">
+      <DependentUpon>FormMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_DanhMuc\FormTrinhDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_DanhMuc\FormTrinhDo.Designer.cs">
+      <DependentUpon>FormTrinhDo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_DanhMuc\FormBoMon.resx">
+      <DependentUpon>FormBoMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_DanhMuc\FormChuyenNganh.resx">
+      <DependentUpon>FormChuyenNganh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_DanhMuc\FormKhoa.resx">
       <DependentUpon>FormKhoa.cs</DependentUpon>
@@ -103,6 +121,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_GiaoVien\FormGiaoVienMonDay.resx">
       <DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_DanhMuc\FormMonHoc.resx">
+      <DependentUpon>FormMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_DanhMuc\FormTrinhDo.resx">
+      <DependentUpon>FormTrinhDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_GiaoVien\FormLopHoc.resx">
+      <DependentUpon>FormLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,11 +155,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms_LichDay\" />
     <Folder Include="Forms_TimKiem\" />
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\InitDatabase.sql..sql" />
+    <None Include="Resources\calendar3.png" />
+    <None Include="Resources\google-classroom.png" />
+    <None Include="Resources\books3.png" />
+    <None Include="Resources\admin.png" />
     <None Include="Resources\user-avatar1.png" />
     <None Include="Resources\calendar %282%29.png" />
     <None Include="Resources\file.png" />
