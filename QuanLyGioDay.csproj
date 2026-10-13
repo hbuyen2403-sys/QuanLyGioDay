@@ -135,6 +135,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\InitDatabase.sql..sql" />
+    <None Include="Resources\icons8-university-50 %281%292.png" />
+    <None Include="Resources\icons8-university-50 %281%291.png" />
+    <None Include="Resources\1791873890260_414305853542081442_9066883167393067209_f6c9c940648ace7f3996dcc7cb2f62c5.jpg" />
+    <None Include="Resources\icons8-university-50 %281%29.png" />
+    <None Include="Resources\icons8-university-50.png" />
     <None Include="Resources\calendar3.png" />
     <None Include="Resources\google-classroom.png" />
     <None Include="Resources\books3.png" />

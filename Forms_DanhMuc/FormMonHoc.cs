@@ -320,5 +320,10 @@ namespace QuanLyGioDay.Forms_DanhMuc
             txtSoTiet.Text = "";
             cboKhoa.SelectedIndex = -1;
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

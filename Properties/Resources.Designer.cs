@@ -63,6 +63,17 @@ namespace QuanLyGioDay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1791873890260_414305853542081442_9066883167393067209_f6c9c940648ace7f3996dcc7cb2f62c5 {
+            get {
+                object obj = ResourceManager.GetObject("1791873890260_414305853542081442_9066883167393067209_f6c9c940648ace7f3996dcc7cb2f" +
+                        "62c5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap admin {
             get {
                 object obj = ResourceManager.GetObject("admin", resourceCulture);
@@ -346,6 +357,46 @@ namespace QuanLyGioDay.Properties {
         internal static System.Drawing.Bitmap health_check1 {
             get {
                 object obj = ResourceManager.GetObject("health-check1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_university_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-university-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_university_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-university-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_university_50__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-university-50 (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_university_50__1_2 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-university-50 (1)2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,6 +16,8 @@ namespace QuanLyGioDay.Forms_DanhMuc
         public FormTrinhDo()
         {
             InitializeComponent();
+           
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -175,5 +177,9 @@ namespace QuanLyGioDay.Forms_DanhMuc
             txtMaTrinhDo.Enabled = true; // Mở lại ô nhập Mã
             txtMaTrinhDo.Focus();
         }
+
+      
+
+
     }
 }
