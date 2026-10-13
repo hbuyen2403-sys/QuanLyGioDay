@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyGioDay.Forms_BaoCao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,8 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using QuanLyGioDay.Forms_LichDay;
 
 namespace QuanLyGioDay
 {
@@ -16,6 +17,12 @@ namespace QuanLyGioDay
         public FormMain()
         {
             InitializeComponent();
+        }
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            HienThiThongTinTaiKhoan();
+            HienThiThongBao();
+            LoadThongKe();
         }
 
         // --- HÀM MỞ FORM CON DÙNG CHUNG ---
@@ -36,9 +43,9 @@ namespace QuanLyGioDay
             childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
             childForm.WindowState = FormWindowState.Maximized;
-            
+
         }
-        
+
 
         // --- CÁC SỰ KIỆN CLICK (ĐÃ DỌN SẠCH RUỘT ĐỂ THÀNH VIÊN TỰ ĐIỀN) ---
 
@@ -82,7 +89,7 @@ namespace QuanLyGioDay
         // 2. Nhóm Hồ Sơ & Giáo Viên
         private void menuGiaoVien_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void menuLopHoc_Click(object sender, EventArgs e)
@@ -115,14 +122,97 @@ namespace QuanLyGioDay
         // 5. Nhóm Báo Cáo
         private void menuBaoCaoTienDay_Click(object sender, EventArgs e)
         {
-
+            Forms_BaoCao.FormMenuBaoCaoTienDay frm = new Forms_BaoCao.FormMenuBaoCaoTienDay();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuBaoCaoTienThi_Click(object sender, EventArgs e)
         {
-
+            Forms_BaoCao.FormMenuBaoCaoTienThi frm = new Forms_BaoCao.FormMenuBaoCaoTienThi();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
-       
+        private void menuInLichChuaKetThuc_Click(object sender, EventArgs e)
+        {
+            FormInLichChuaKetThuc frm = new FormInLichChuaKetThuc();
+            frm.ShowDialog();
+        }
+        //Phần admin bên trái
+        private void HienThiThongTinTaiKhoan()
+        {
+            lblTenDangNhap.Text = "Admin";
+            lblVaiTro.Text = "Quản trị viên";
+            lblTrangThai.Text = "Đã đăng nhập";
+
+            lblNgayDangNhap.Text =
+                "Ngày: " + DateTime.Now.ToString("dd/MM/yyyy");
+        }
+        private void menuInTKBGiaoVien_Click(object sender, EventArgs e)
+        {
+            FormInThoiKhoaBieu frm = new FormInThoiKhoaBieu();
+            frm.Show();
+            lblThoiGian.Text =
+                "Giờ: " + DateTime.Now.ToString("HH:mm:ss");
+        }
+        private void HienThiThongBao()
+        {
+            lstThongBao.Items.Clear();
+
+            lstThongBao.Items.Add(
+                "Hệ thống đã sẵn sàng");
+
+            lstThongBao.Items.Add(
+                "Kết nối cơ sở dữ liệu thành công");
+
+            lstThongBao.Items.Add(
+                "Chào mừng quản trị viên");
+        }
+        
+
+        private void LoadThongKe()
+        {
+            try
+            {
+                string sql = @"
+            SELECT
+                (SELECT COUNT(*) FROM GiaoVien) AS TongGiaoVien,
+                (SELECT COUNT(*) FROM MonHoc) AS TongMonHoc,
+                (SELECT COUNT(*) FROM LopHoc) AS TongLopHoc,
+                (SELECT COUNT(*) FROM LichDay) AS TongLichDay
+        ";
+
+                DataTable dt = Database.GetData(sql);
+
+                if (dt.Rows.Count > 0)
+                {
+                    label1.Text =
+                        dt.Rows[0]["TongGiaoVien"].ToString();
+
+                    lbl2.Text =
+                        dt.Rows[0]["TongMonHoc"].ToString();
+
+                    lbl3.Text =
+                        dt.Rows[0]["TongLopHoc"].ToString();
+
+                    lbl4.Text =
+                        dt.Rows[0]["TongLichDay"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Lỗi khi tải thống kê: " + ex.Message,
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+        public void RefreshThongKe()
+        {
+            LoadThongKe();
+        }
+
     }
 }
