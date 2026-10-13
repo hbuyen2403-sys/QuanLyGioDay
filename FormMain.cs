@@ -108,17 +108,23 @@ namespace QuanLyGioDay
         // 2. Nhóm Hồ Sơ & Giáo Viên
         private void menuGiaoVien_Click(object sender, EventArgs e)
         {
-
+            Forms_GiaoVien.FormGiaoVien frm = new Forms_GiaoVien.FormGiaoVien();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuLopHoc_Click(object sender, EventArgs e)
         {
-
+            Forms_GiaoVien.FormLopHoc frm = new Forms_GiaoVien.FormLopHoc();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         private void menuGVMonDay_Click(object sender, EventArgs e)
         {
-
+            Forms_GiaoVien.FormGiaoVienMonDay frm = new Forms_GiaoVien.FormGiaoVienMonDay();
+            OpenChildForm(frm);
+            panel2.SendToBack();
         }
 
         // 3. Nhóm Lịch Dạy

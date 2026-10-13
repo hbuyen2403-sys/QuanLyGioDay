@@ -72,6 +72,24 @@
     <Compile Include="Forms_DanhMuc\FormKhoa.Designer.cs">
       <DependentUpon>FormKhoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVien.Designer.cs">
+      <DependentUpon>FormGiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.Designer.cs">
+      <DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_GiaoVien\FormLopHoc.Designer.cs">
+      <DependentUpon>FormLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_DanhMuc\FormMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +134,12 @@
     <EmbeddedResource Include="Forms_DanhMuc\FormKhoa.resx">
       <DependentUpon>FormKhoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_GiaoVien\FormGiaoVien.resx">
+      <DependentUpon>FormGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_GiaoVien\FormGiaoVienMonDay.resx">
+      <DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_DanhMuc\FormMonHoc.resx">
       <DependentUpon>FormMonHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +154,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_TimKiem\FormTimKiemLichHoc.resx">
       <DependentUpon>FormTimKiemLichHoc.cs</DependentUpon>
+    <EmbeddedResource Include="Forms_GiaoVien\FormLopHoc.resx">
+      <DependentUpon>FormLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,10 +182,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms_GiaoVien\" />
+    <Folder Include="Forms_LichDay\" />
+    <Folder Include="Forms_TimKiem\" />
     <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\InitDatabase.sql..sql" />
+    <None Include="Resources\icons8-university-50 %281%292.png" />
+    <None Include="Resources\icons8-university-50 %281%291.png" />
+    <None Include="Resources\1791873890260_414305853542081442_9066883167393067209_f6c9c940648ace7f3996dcc7cb2f62c5.jpg" />
+    <None Include="Resources\icons8-university-50 %281%29.png" />
+    <None Include="Resources\icons8-university-50.png" />
     <None Include="Resources\calendar3.png" />
     <None Include="Resources\google-classroom.png" />
     <None Include="Resources\books3.png" />
