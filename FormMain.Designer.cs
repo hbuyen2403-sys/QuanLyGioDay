@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripTrangChủ = new System.Windows.Forms.ToolStripMenuItem();
             this.danhMụcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuKhoa = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBoMon = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,9 +53,14 @@
             this.menuInLichChuaKetThuc = new System.Windows.Forms.ToolStripMenuItem();
             this.menuInTKBGiaoVien = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.lblTongGiaoVien = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstThongBao = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTieuDeLich = new System.Windows.Forms.Label();
+            this.lblTieuDeLop = new System.Windows.Forms.Label();
+            this.lblTieuDeMon = new System.Windows.Forms.Label();
+            this.lblTieuDeGV = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -78,11 +84,11 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTongGiaoVien = new System.Windows.Forms.Label();
-            this.lblTieuDeGV = new System.Windows.Forms.Label();
-            this.lblTieuDeMon = new System.Windows.Forms.Label();
-            this.lblTieuDeLop = new System.Windows.Forms.Label();
-            this.lblTieuDeLich = new System.Windows.Forms.Label();
+            this.dgvLichTrongNgay = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnHomNay = new System.Windows.Forms.Button();
+            this.dtpNgayXem = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnlSidebar.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,6 +100,8 @@
             this.grpTaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLichTrongNgay)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -101,6 +109,7 @@
             this.menuStrip1.BackColor = System.Drawing.Color.ForestGreen;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTrangChủ,
             this.danhMụcToolStripMenuItem,
             this.quảnLýHồSơToolStripMenuItem,
             this.quảnLýLịchDạyToolStripMenuItem,
@@ -109,9 +118,16 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1471, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1471, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripTrangChủ
+            // 
+            this.toolStripTrangChủ.Name = "toolStripTrangChủ";
+            this.toolStripTrangChủ.Size = new System.Drawing.Size(87, 26);
+            this.toolStripTrangChủ.Text = "Trang chủ";
+            this.toolStripTrangChủ.Click += new System.EventHandler(this.toolStripTrangChủ_Click);
             // 
             // danhMụcToolStripMenuItem
             // 
@@ -225,21 +241,22 @@
             this.menuTimKiemGiaoVien});
             this.traCứTìmKiếmToolStripMenuItem.Image = global::QuanLyGioDay.Properties.Resources.folder__4_;
             this.traCứTìmKiếmToolStripMenuItem.Name = "traCứTìmKiếmToolStripMenuItem";
-            this.traCứTìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
-            this.traCứTìmKiếmToolStripMenuItem.Text = "Tra cứ & Tìm kiếm";
+            this.traCứTìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.traCứTìmKiếmToolStripMenuItem.Text = "Tra cứu &Tìm kiếm";
             // 
             // menuTimKiemLichHoc
             // 
             this.menuTimKiemLichHoc.Image = global::QuanLyGioDay.Properties.Resources.calendar__2_;
             this.menuTimKiemLichHoc.Name = "menuTimKiemLichHoc";
-            this.menuTimKiemLichHoc.Size = new System.Drawing.Size(154, 26);
+            this.menuTimKiemLichHoc.Size = new System.Drawing.Size(224, 26);
             this.menuTimKiemLichHoc.Text = "Lịch học";
+            this.menuTimKiemLichHoc.Click += new System.EventHandler(this.menuTimKiemLichHoc_Click_1);
             // 
             // menuTimKiemGiaoVien
             // 
             this.menuTimKiemGiaoVien.Image = global::QuanLyGioDay.Properties.Resources.user_avatar1;
             this.menuTimKiemGiaoVien.Name = "menuTimKiemGiaoVien";
-            this.menuTimKiemGiaoVien.Size = new System.Drawing.Size(154, 26);
+            this.menuTimKiemGiaoVien.Size = new System.Drawing.Size(224, 26);
             this.menuTimKiemGiaoVien.Text = "Giáo viên";
             this.menuTimKiemGiaoVien.Click += new System.EventHandler(this.menuTimKiemGiaoVien_Click);
             // 
@@ -295,19 +312,31 @@
             this.pnlSidebar.Controls.Add(this.groupBox1);
             this.pnlSidebar.Controls.Add(this.grpTaiKhoan);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSidebar.Location = new System.Drawing.Point(0, 30);
-            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlSidebar.Location = new System.Drawing.Point(0, 28);
+            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(267, 765);
+            this.pnlSidebar.Size = new System.Drawing.Size(267, 767);
             this.pnlSidebar.TabIndex = 3;
+            // 
+            // lblTongGiaoVien
+            // 
+            this.lblTongGiaoVien.AutoSize = true;
+            this.lblTongGiaoVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongGiaoVien.ForeColor = System.Drawing.Color.Black;
+            this.lblTongGiaoVien.Location = new System.Drawing.Point(167, 218);
+            this.lblTongGiaoVien.Name = "lblTongGiaoVien";
+            this.lblTongGiaoVien.Size = new System.Drawing.Size(0, 16);
+            this.lblTongGiaoVien.TabIndex = 14;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lstThongBao);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.groupBox2.Location = new System.Drawing.Point(16, 461);
+            this.groupBox2.Location = new System.Drawing.Point(16, 462);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Size = new System.Drawing.Size(245, 286);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
@@ -318,9 +347,10 @@
             this.lstThongBao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstThongBao.FormattingEnabled = true;
             this.lstThongBao.ItemHeight = 16;
-            this.lstThongBao.Location = new System.Drawing.Point(3, 18);
+            this.lstThongBao.Location = new System.Drawing.Point(3, 17);
+            this.lstThongBao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstThongBao.Name = "lstThongBao";
-            this.lstThongBao.Size = new System.Drawing.Size(239, 265);
+            this.lstThongBao.Size = new System.Drawing.Size(239, 267);
             this.lstThongBao.TabIndex = 0;
             // 
             // groupBox1
@@ -339,17 +369,64 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Green;
-            this.groupBox1.Location = new System.Drawing.Point(10, 183);
+            this.groupBox1.Location = new System.Drawing.Point(11, 183);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Size = new System.Drawing.Size(245, 272);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "THỐNG KÊ NHANH";
             // 
+            // lblTieuDeLich
+            // 
+            this.lblTieuDeLich.AutoSize = true;
+            this.lblTieuDeLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDeLich.ForeColor = System.Drawing.Color.Black;
+            this.lblTieuDeLich.Location = new System.Drawing.Point(59, 206);
+            this.lblTieuDeLich.Name = "lblTieuDeLich";
+            this.lblTieuDeLich.Size = new System.Drawing.Size(128, 16);
+            this.lblTieuDeLich.TabIndex = 17;
+            this.lblTieuDeLich.Text = "Tổng lịch giảng dạy:";
+            // 
+            // lblTieuDeLop
+            // 
+            this.lblTieuDeLop.AutoSize = true;
+            this.lblTieuDeLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDeLop.ForeColor = System.Drawing.Color.Black;
+            this.lblTieuDeLop.Location = new System.Drawing.Point(59, 144);
+            this.lblTieuDeLop.Name = "lblTieuDeLop";
+            this.lblTieuDeLop.Size = new System.Drawing.Size(89, 16);
+            this.lblTieuDeLop.TabIndex = 16;
+            this.lblTieuDeLop.Text = "Tổng lớp học:";
+            // 
+            // lblTieuDeMon
+            // 
+            this.lblTieuDeMon.AutoSize = true;
+            this.lblTieuDeMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDeMon.ForeColor = System.Drawing.Color.Black;
+            this.lblTieuDeMon.Location = new System.Drawing.Point(59, 87);
+            this.lblTieuDeMon.Name = "lblTieuDeMon";
+            this.lblTieuDeMon.Size = new System.Drawing.Size(96, 16);
+            this.lblTieuDeMon.TabIndex = 15;
+            this.lblTieuDeMon.Text = "Tổng môn học:";
+            // 
+            // lblTieuDeGV
+            // 
+            this.lblTieuDeGV.AutoSize = true;
+            this.lblTieuDeGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDeGV.ForeColor = System.Drawing.Color.Black;
+            this.lblTieuDeGV.Location = new System.Drawing.Point(59, 30);
+            this.lblTieuDeGV.Name = "lblTieuDeGV";
+            this.lblTieuDeGV.Size = new System.Drawing.Size(100, 16);
+            this.lblTieuDeGV.TabIndex = 14;
+            this.lblTieuDeGV.Text = "Tổng giáo viên:";
+            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::QuanLyGioDay.Properties.Resources.calendar3;
             this.pictureBox6.Location = new System.Drawing.Point(11, 197);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(39, 30);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -359,7 +436,8 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::QuanLyGioDay.Properties.Resources.google_classroom;
-            this.pictureBox5.Location = new System.Drawing.Point(11, 136);
+            this.pictureBox5.Location = new System.Drawing.Point(11, 135);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 30);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -370,6 +448,7 @@
             // 
             this.pictureBox4.Image = global::QuanLyGioDay.Properties.Resources.books3;
             this.pictureBox4.Location = new System.Drawing.Point(11, 81);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 30);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -379,7 +458,8 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::QuanLyGioDay.Properties.Resources.teacher;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 21);
+            this.pictureBox3.Location = new System.Drawing.Point(11, 21);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 30);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -413,7 +493,7 @@
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl2.ForeColor = System.Drawing.Color.Black;
-            this.lbl2.Location = new System.Drawing.Point(165, 88);
+            this.lbl2.Location = new System.Drawing.Point(165, 89);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(62, 16);
             this.lbl2.TabIndex = 8;
@@ -441,8 +521,10 @@
             this.grpTaiKhoan.Controls.Add(this.pictureBox1);
             this.grpTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpTaiKhoan.ForeColor = System.Drawing.Color.Green;
-            this.grpTaiKhoan.Location = new System.Drawing.Point(10, 10);
+            this.grpTaiKhoan.Location = new System.Drawing.Point(11, 10);
+            this.grpTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpTaiKhoan.Name = "grpTaiKhoan";
+            this.grpTaiKhoan.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpTaiKhoan.Size = new System.Drawing.Size(245, 167);
             this.grpTaiKhoan.TabIndex = 0;
             this.grpTaiKhoan.TabStop = false;
@@ -495,7 +577,7 @@
             this.lblVaiTro.AutoSize = true;
             this.lblVaiTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVaiTro.ForeColor = System.Drawing.Color.Black;
-            this.lblVaiTro.Location = new System.Drawing.Point(86, 42);
+            this.lblVaiTro.Location = new System.Drawing.Point(85, 42);
             this.lblVaiTro.Name = "lblVaiTro";
             this.lblVaiTro.Size = new System.Drawing.Size(80, 16);
             this.lblVaiTro.TabIndex = 2;
@@ -513,9 +595,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyGioDay.Properties.Resources.admin;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 21);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -567,65 +650,81 @@
             // 
             // panel2
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(267, 30);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.dgvLichTrongNgay);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.btnHomNay);
+            this.panel2.Controls.Add(this.dtpNgayXem);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(267, 34);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1204, 765);
+            this.panel2.Size = new System.Drawing.Size(1204, 759);
             this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // lblTongGiaoVien
+            // dgvLichTrongNgay
             // 
-            this.lblTongGiaoVien.AutoSize = true;
-            this.lblTongGiaoVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongGiaoVien.ForeColor = System.Drawing.Color.Black;
-            this.lblTongGiaoVien.Location = new System.Drawing.Point(167, 218);
-            this.lblTongGiaoVien.Name = "lblTongGiaoVien";
-            this.lblTongGiaoVien.Size = new System.Drawing.Size(0, 16);
-            this.lblTongGiaoVien.TabIndex = 14;
+            this.dgvLichTrongNgay.AllowUserToAddRows = false;
+            this.dgvLichTrongNgay.AllowUserToDeleteRows = false;
+            this.dgvLichTrongNgay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLichTrongNgay.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvLichTrongNgay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLichTrongNgay.Location = new System.Drawing.Point(12, 86);
+            this.dgvLichTrongNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLichTrongNgay.MultiSelect = false;
+            this.dgvLichTrongNgay.Name = "dgvLichTrongNgay";
+            this.dgvLichTrongNgay.ReadOnly = true;
+            this.dgvLichTrongNgay.RowHeadersVisible = false;
+            this.dgvLichTrongNgay.RowHeadersWidth = 51;
+            this.dgvLichTrongNgay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect;
+            this.dgvLichTrongNgay.Size = new System.Drawing.Size(871, 658);
+            this.dgvLichTrongNgay.TabIndex = 5;
+            this.dgvLichTrongNgay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichTrongNgay_CellContentClick);
             // 
-            // lblTieuDeGV
+            // label3
             // 
-            this.lblTieuDeGV.AutoSize = true;
-            this.lblTieuDeGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDeGV.ForeColor = System.Drawing.Color.Black;
-            this.lblTieuDeGV.Location = new System.Drawing.Point(58, 30);
-            this.lblTieuDeGV.Name = "lblTieuDeGV";
-            this.lblTieuDeGV.Size = new System.Drawing.Size(100, 16);
-            this.lblTieuDeGV.TabIndex = 14;
-            this.lblTieuDeGV.Text = "Tổng giáo viên:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Danh sách các lớp được phân công";
             // 
-            // lblTieuDeMon
+            // btnHomNay
             // 
-            this.lblTieuDeMon.AutoSize = true;
-            this.lblTieuDeMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDeMon.ForeColor = System.Drawing.Color.Black;
-            this.lblTieuDeMon.Location = new System.Drawing.Point(59, 87);
-            this.lblTieuDeMon.Name = "lblTieuDeMon";
-            this.lblTieuDeMon.Size = new System.Drawing.Size(96, 16);
-            this.lblTieuDeMon.TabIndex = 15;
-            this.lblTieuDeMon.Text = "Tổng môn học:";
+            this.btnHomNay.Location = new System.Drawing.Point(783, 53);
+            this.btnHomNay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHomNay.Name = "btnHomNay";
+            this.btnHomNay.Size = new System.Drawing.Size(100, 28);
+            this.btnHomNay.TabIndex = 2;
+            this.btnHomNay.Text = "Hôm nay";
+            this.btnHomNay.UseVisualStyleBackColor = true;
             // 
-            // lblTieuDeLop
+            // dtpNgayXem
             // 
-            this.lblTieuDeLop.AutoSize = true;
-            this.lblTieuDeLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDeLop.ForeColor = System.Drawing.Color.Black;
-            this.lblTieuDeLop.Location = new System.Drawing.Point(59, 144);
-            this.lblTieuDeLop.Name = "lblTieuDeLop";
-            this.lblTieuDeLop.Size = new System.Drawing.Size(89, 16);
-            this.lblTieuDeLop.TabIndex = 16;
-            this.lblTieuDeLop.Text = "Tổng lớp học:";
+            this.dtpNgayXem.Location = new System.Drawing.Point(508, 57);
+            this.dtpNgayXem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayXem.Name = "dtpNgayXem";
+            this.dtpNgayXem.Size = new System.Drawing.Size(265, 22);
+            this.dtpNgayXem.TabIndex = 1;
             // 
-            // lblTieuDeLich
+            // label2
             // 
-            this.lblTieuDeLich.AutoSize = true;
-            this.lblTieuDeLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDeLich.ForeColor = System.Drawing.Color.Black;
-            this.lblTieuDeLich.Location = new System.Drawing.Point(59, 206);
-            this.lblTieuDeLich.Name = "lblTieuDeLich";
-            this.lblTieuDeLich.Size = new System.Drawing.Size(128, 16);
-            this.lblTieuDeLich.TabIndex = 17;
-            this.lblTieuDeLich.Text = "Tổng lịch giảng dạy:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Green;
+            this.label2.Location = new System.Drawing.Point(257, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(303, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "LỊCH GIẢNG DẠY TẠI TRƯỜNG";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FormMain
             // 
@@ -661,6 +760,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLichTrongNgay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -721,6 +823,12 @@
         private System.Windows.Forms.Label lblTieuDeLop;
         private System.Windows.Forms.Label lblTieuDeMon;
         private System.Windows.Forms.Label lblTieuDeGV;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnHomNay;
+        private System.Windows.Forms.DateTimePicker dtpNgayXem;
+        private System.Windows.Forms.DataGridView dgvLichTrongNgay;
+        private System.Windows.Forms.ToolStripMenuItem toolStripTrangChủ;
     }
 }
 
