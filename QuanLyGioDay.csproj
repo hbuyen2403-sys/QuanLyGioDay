@@ -1,225 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{16A1B5A4-2DD3-4633-854B-4BDCD118C113}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>QuanLyGioDay</RootNamespace>
-    <AssemblyName>QuanLyGioDay</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Database.cs" />
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormBoMon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormBoMon.Designer.cs">
-      <DependentUpon>FormBoMon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormChuyenNganh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormChuyenNganh.Designer.cs">
-      <DependentUpon>FormChuyenNganh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormKhoa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormKhoa.Designer.cs">
-      <DependentUpon>FormKhoa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_GiaoVien\FormGiaoVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_GiaoVien\FormGiaoVien.Designer.cs">
-      <DependentUpon>FormGiaoVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.Designer.cs">
-      <DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_GiaoVien\FormLopHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_GiaoVien\FormLopHoc.Designer.cs">
-      <DependentUpon>FormLopHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormMonHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormMonHoc.Designer.cs">
-      <DependentUpon>FormMonHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormTrinhDo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_DanhMuc\FormTrinhDo.Designer.cs">
-      <DependentUpon>FormTrinhDo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_LichDay\FormLichDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_LichDay\FormLichDay.Designer.cs">
-      <DependentUpon>FormLichDay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_TimKiem\FormTimKiemGiaoVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_TimKiem\FormTimKiemGiaoVien.Designer.cs">
-      <DependentUpon>FormTimKiemGiaoVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_TimKiem\FormTimKiemLichHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_TimKiem\FormTimKiemLichHoc.Designer.cs">
-      <DependentUpon>FormTimKiemLichHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_DanhMuc\FormBoMon.resx">
-      <DependentUpon>FormBoMon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_DanhMuc\FormChuyenNganh.resx">
-      <DependentUpon>FormChuyenNganh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_DanhMuc\FormKhoa.resx">
-      <DependentUpon>FormKhoa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_GiaoVien\FormGiaoVien.resx">
-      <DependentUpon>FormGiaoVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_GiaoVien\FormGiaoVienMonDay.resx">
-      <DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_DanhMuc\FormMonHoc.resx">
-      <DependentUpon>FormMonHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_DanhMuc\FormTrinhDo.resx">
-      <DependentUpon>FormTrinhDo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_LichDay\FormLichDay.resx">
-      <DependentUpon>FormLichDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_TimKiem\FormTimKiemGiaoVien.resx">
-      <DependentUpon>FormTimKiemGiaoVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_TimKiem\FormTimKiemLichHoc.resx">
-      <DependentUpon>FormTimKiemLichHoc.cs</DependentUpon>
-    <EmbeddedResource Include="Forms_GiaoVien\FormLopHoc.resx">
-      <DependentUpon>FormLopHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms_GiaoVien\" />
-    <Folder Include="Forms_LichDay\" />
-    <Folder Include="Forms_TimKiem\" />
-    <Folder Include="Reports\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database\InitDatabase.sql..sql" />
-    <None Include="Resources\icons8-university-50 %281%292.png" />
-    <None Include="Resources\icons8-university-50 %281%291.png" />
-    <None Include="Resources\1791873890260_414305853542081442_9066883167393067209_f6c9c940648ace7f3996dcc7cb2f62c5.jpg" />
-    <None Include="Resources\icons8-university-50 %281%29.png" />
-    <None Include="Resources\icons8-university-50.png" />
-    <None Include="Resources\calendar3.png" />
-    <None Include="Resources\google-classroom.png" />
-    <None Include="Resources\books3.png" />
-    <None Include="Resources\admin.png" />
-    <None Include="Resources\user-avatar1.png" />
-    <None Include="Resources\calendar %282%29.png" />
-    <None Include="Resources\file.png" />
-    <None Include="Resources\folder %284%29.png" />
-    <None Include="Resources\calendar %281%29.png" />
-    <None Include="Resources\folder %283%29.png" />
-    <None Include="Resources\list.png" />
-    <None Include="Resources\printing2.png" />
-    <None Include="Resources\business-report1.png" />
-    <None Include="Resources\health-check1.png" />
-    <None Include="Resources\find1.png" />
-    <None Include="Resources\calendar2.png" />
-    <None Include="Resources\calendar1.png" />
-    <None Include="Resources\teacher %281%291.png" />
-    <None Include="Resources\lecture1.png" />
-    <None Include="Resources\teacher1.png" />
-    <None Include="Resources\books2.png" />
-    <None Include="Resources\education2.png" />
-    <None Include="Resources\baccalaureate1.png" />
-    <None Include="Resources\folder.png" />
-    <None Include="Resources\education1.png" />
-    <None Include="Resources\books1.png" />
-    <None Include="Resources\books %281%291.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{16A1B5A4-2DD3-4633-854B-4BDCD118C113}</ProjectGuid>
+		<OutputType>WinExe</OutputType>
+		<RootNamespace>QuanLyGioDay</RootNamespace>
+		<AssemblyName>QuanLyGioDay</AssemblyName>
+		<TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+		<FileAlignment>512</FileAlignment>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System" />
+		<Reference Include="System.Configuration" />
+		<Reference Include="System.Core" />
+		<Reference Include="System.Xml.Linq" />
+		<Reference Include="System.Data.DataSetExtensions" />
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Deployment" />
+		<Reference Include="System.Drawing" />
+		<Reference Include="System.Net.Http" />
+		<Reference Include="System.Windows.Forms" />
+		<Reference Include="System.Xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Database.cs" />
+		<Compile Include="FormMain.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="FormMain.Designer.cs">
+			<DependentUpon>FormMain.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormBoMon.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormBoMon.Designer.cs">
+			<DependentUpon>FormBoMon.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormChuyenNganh.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormChuyenNganh.Designer.cs">
+			<DependentUpon>FormChuyenNganh.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormKhoa.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormKhoa.Designer.cs">
+			<DependentUpon>FormKhoa.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_GiaoVien\FormGiaoVien.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_GiaoVien\FormGiaoVien.Designer.cs">
+			<DependentUpon>FormGiaoVien.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_GiaoVien\FormGiaoVienMonDay.Designer.cs">
+			<DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_GiaoVien\FormLopHoc.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_GiaoVien\FormLopHoc.Designer.cs">
+			<DependentUpon>FormLopHoc.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormMonHoc.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormMonHoc.Designer.cs">
+			<DependentUpon>FormMonHoc.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormTrinhDo.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_DanhMuc\FormTrinhDo.Designer.cs">
+			<DependentUpon>FormTrinhDo.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_LichDay\FormLichDay.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_LichDay\FormLichDay.Designer.cs">
+			<DependentUpon>FormLichDay.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_TimKiem\FormTimKiemGiaoVien.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_TimKiem\FormTimKiemGiaoVien.Designer.cs">
+			<DependentUpon>FormTimKiemGiaoVien.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Forms_TimKiem\FormTimKiemLichHoc.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Include="Forms_TimKiem\FormTimKiemLichHoc.Designer.cs">
+			<DependentUpon>FormTimKiemLichHoc.cs</DependentUpon>
+		</Compile>
+		<Compile Include="Program.cs" />
+		<Compile Include="Properties\AssemblyInfo.cs" />
+		<EmbeddedResource Include="FormMain.resx">
+			<DependentUpon>FormMain.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_DanhMuc\FormBoMon.resx">
+			<DependentUpon>FormBoMon.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_DanhMuc\FormChuyenNganh.resx">
+			<DependentUpon>FormChuyenNganh.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_DanhMuc\FormKhoa.resx">
+			<DependentUpon>FormKhoa.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_GiaoVien\FormGiaoVien.resx">
+			<DependentUpon>FormGiaoVien.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_GiaoVien\FormGiaoVienMonDay.resx">
+			<DependentUpon>FormGiaoVienMonDay.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_DanhMuc\FormMonHoc.resx">
+			<DependentUpon>FormMonHoc.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_DanhMuc\FormTrinhDo.resx">
+			<DependentUpon>FormTrinhDo.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_LichDay\FormLichDay.resx">
+			<DependentUpon>FormLichDay.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_TimKiem\FormTimKiemGiaoVien.resx">
+			<DependentUpon>FormTimKiemGiaoVien.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_TimKiem\FormTimKiemLichHoc.resx">
+			<DependentUpon>FormTimKiemLichHoc.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Forms_GiaoVien\FormLopHoc.resx">
+			<DependentUpon>FormLopHoc.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Include="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+			<SubType>Designer</SubType>
+		</EmbeddedResource>
+		<Compile Include="Properties\Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<None Include="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<Compile Include="Properties\Settings.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="App.config" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Forms_GiaoVien\" />
+		<Folder Include="Forms_LichDay\" />
+		<Folder Include="Forms_TimKiem\" />
+		<Folder Include="Reports\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="Database\InitDatabase.sql..sql" />
+		<None Include="Resources\icons8-university-50 %281%292.png" />
+		<None Include="Resources\icons8-university-50 %281%291.png" />
+		<None Include="Resources\1791873890260_414305853542081442_9066883167393067209_f6c9c940648ace7f3996dcc7cb2f62c5.jpg" />
+		<None Include="Resources\icons8-university-50 %281%29.png" />
+		<None Include="Resources\icons8-university-50.png" />
+		<None Include="Resources\calendar3.png" />
+		<None Include="Resources\google-classroom.png" />
+		<None Include="Resources\books3.png" />
+		<None Include="Resources\admin.png" />
+		<None Include="Resources\user-avatar1.png" />
+		<None Include="Resources\calendar %282%29.png" />
+		<None Include="Resources\file.png" />
+		<None Include="Resources\folder %284%29.png" />
+		<None Include="Resources\calendar %281%29.png" />
+		<None Include="Resources\folder %283%29.png" />
+		<None Include="Resources\list.png" />
+		<None Include="Resources\printing2.png" />
+		<None Include="Resources\business-report1.png" />
+		<None Include="Resources\health-check1.png" />
+		<None Include="Resources\find1.png" />
+		<None Include="Resources\calendar2.png" />
+		<None Include="Resources\calendar1.png" />
+		<None Include="Resources\teacher %281%291.png" />
+		<None Include="Resources\lecture1.png" />
+		<None Include="Resources\teacher1.png" />
+		<None Include="Resources\books2.png" />
+		<None Include="Resources\education2.png" />
+		<None Include="Resources\baccalaureate1.png" />
+		<None Include="Resources\folder.png" />
+		<None Include="Resources\education1.png" />
+		<None Include="Resources\books1.png" />
+		<None Include="Resources\books %281%291.png" />
+	</ItemGroup>
+	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

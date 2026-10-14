@@ -13,9 +13,6 @@ namespace QuanLyGioDay.Forms_GiaoVien
 {
     public partial class FormGiaoVienMonDay : Form
     {
-        private readonly string chuoiKetNoi =
-            @"Data Source=DESKTOP-1EBSNGJ\SQLEXPRESS;Initial Catalog=QuanLyGioDay;Integrated Security=True;TrustServerCertificate=True;";
-
         private string cheDo = ""; 
         private string maGVChon = "";
         private string maMonChon = "";
@@ -26,32 +23,15 @@ namespace QuanLyGioDay.Forms_GiaoVien
         }
 
         private DataTable DocDuLieu(
-            string sql, params SqlParameter[] thamSo)
+     string sql, params SqlParameter[] thamSo)
         {
-            using (SqlConnection conn =
-                new SqlConnection(chuoiKetNoi))
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-            {
-                cmd.Parameters.AddRange(thamSo);
-
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
+            return Database.ExecuteQuery(sql, thamSo);
         }
 
         private int GhiDuLieu(
             string sql, params SqlParameter[] thamSo)
         {
-            using (SqlConnection conn =
-                new SqlConnection(chuoiKetNoi))
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.AddRange(thamSo);
-                conn.Open();
-                return cmd.ExecuteNonQuery();
-            }
+            return Database.ExecuteNonQuery(sql, thamSo);
         }
 
         private SqlParameter ThamSo(string ten, string giaTri)
