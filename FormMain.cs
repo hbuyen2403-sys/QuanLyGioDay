@@ -159,12 +159,26 @@ namespace QuanLyGioDay
         // 5. Nhóm Báo Cáo
         private void menuBaoCaoTienDay_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Reports.FormMenuBaoCaoTienDay());
+            panel2.SendToBack();
         }
 
         private void menuBaoCaoTienThi_Click(object sender, EventArgs e)
         {
+            OpenChildForm(new Reports.FormMenuBaoCaoTienThi());
+            panel2.SendToBack();
+        }
 
+        private void menuInLichChuaKetThuc_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Reports.FormInLichChuaKetThuc());
+            panel2.SendToBack();
+        }
+
+        private void menuInTKBGiaoVien_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Reports.FormInTKBGiaoVien());
+            panel2.SendToBack();
         }
         //Phần admin bên trái
         private void HienThiThongTinTaiKhoan()
